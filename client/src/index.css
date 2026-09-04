@@ -1,3 +1,4 @@
+/* Design philosophy: Caderno Executivo de Travessia — warm paper, graphite type, terracotta wayfinding, editorial spacing, evidence-led interaction. */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -32,146 +33,98 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --radius: 0.8rem;
+  --background: oklch(0.965 0.012 85);
+  --foreground: oklch(0.245 0.025 160);
+  --card: oklch(0.985 0.008 85);
+  --card-foreground: oklch(0.245 0.025 160);
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.245 0.025 160);
+  --primary: oklch(0.49 0.105 37);
+  --primary-foreground: oklch(0.985 0.008 85);
+  --secondary: oklch(0.92 0.022 84);
+  --secondary-foreground: oklch(0.31 0.035 155);
+  --muted: oklch(0.93 0.014 83);
+  --muted-foreground: oklch(0.51 0.025 78);
+  --accent: oklch(0.69 0.075 145);
+  --accent-foreground: oklch(0.27 0.04 155);
+  --destructive: oklch(0.58 0.18 28);
+  --destructive-foreground: oklch(0.985 0.008 85);
+  --border: oklch(0.86 0.018 80);
+  --input: oklch(0.86 0.018 80);
+  --ring: oklch(0.49 0.105 37);
+  --chart-1: oklch(0.49 0.105 37);
+  --chart-2: oklch(0.43 0.05 155);
+  --chart-3: oklch(0.67 0.09 145);
+  --chart-4: oklch(0.72 0.075 80);
+  --chart-5: oklch(0.55 0.04 210);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --background: oklch(0.18 0.025 155);
+  --foreground: oklch(0.94 0.012 85);
+  --card: oklch(0.23 0.027 155);
+  --card-foreground: oklch(0.94 0.012 85);
+  --popover: oklch(0.23 0.027 155);
+  --popover-foreground: oklch(0.94 0.012 85);
+  --primary: oklch(0.65 0.11 37);
+  --primary-foreground: oklch(0.18 0.025 155);
+  --secondary: oklch(0.28 0.03 155);
+  --secondary-foreground: oklch(0.88 0.018 85);
+  --muted: oklch(0.28 0.03 155);
+  --muted-foreground: oklch(0.7 0.02 85);
+  --accent: oklch(0.66 0.075 145);
+  --accent-foreground: oklch(0.18 0.025 155);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.65 0.11 37);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; margin: 0; font-family: "Manrope", sans-serif; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href], input:not(:disabled), textarea:not(:disabled) { @apply cursor-pointer; }
+  ::selection { background: #d9a18e; color: #25352d; }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
+  .font-display { font-family: "DM Serif Display", Georgia, serif; }
+  .eyebrow { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.18em; line-height: 1; text-transform: uppercase; color: #8c8275; }
+  .chapter-nav { display: flex; width: 100%; align-items: center; gap: 0.72rem; border-radius: 0.8rem; padding: 0.7rem 0.75rem; text-align: left; font-size: 0.78rem; font-weight: 700; color: #81796e; transition: background-color 180ms var(--ease-out), color 180ms var(--ease-out), transform 180ms var(--ease-out); }
+  .chapter-nav:hover { background: rgba(255,255,255,0.45); color: #35433b; transform: translateX(2px); }
+  .chapter-nav-active { background: #f8f4ec; color: #35433b; box-shadow: 0 7px 24px rgba(73, 59, 40, 0.07); }
+  .chapter-number { display: grid; height: 1.65rem; width: 1.65rem; place-items: center; border: 1px solid #d1c7b8; border-radius: 999px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.62rem; color: #958c7e; }
+  .chapter-number-active { border-color: #b95f45; background: #b95f45; color: #fffaf2; }
+  .quiet-button, .icon-button, .secondary-button, .primary-button, .text-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: transform 160ms var(--ease-out), background-color 180ms var(--ease-out), color 180ms var(--ease-out), box-shadow 180ms var(--ease-out); }
+  .quiet-button { border-radius: 999px; padding: 0.55rem 0.8rem; font-size: 0.7rem; font-weight: 800; color: #6e756d; }
+  .quiet-button:hover { background: rgba(255,255,255,0.52); color: #35433b; }
+  .icon-button { height: 2.3rem; width: 2.3rem; border: 1px solid #d8d0c3; border-radius: 0.65rem; color: #6d766d; }
+  .icon-button:hover { background: #fffaf2; color: #b95f45; }
+  .paper-card { border: 1px solid #ded6ca; border-radius: 1rem; background: rgba(255, 252, 245, 0.84); box-shadow: 0 18px 60px rgba(88, 70, 44, 0.07); backdrop-filter: blur(12px); }
+  .side-note { border: 1px solid #ded6ca; border-radius: 0.95rem; background: rgba(255, 250, 241, 0.68); padding: 1.3rem; }
+  .side-note-dark { border-color: #34443b; background: #2b3a33; }
+  .chapter-stamp { border: 1px solid #dbc7bd; border-radius: 999px; background: #f6e8e2; padding: 0.35rem 0.6rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.13em; color: #a5543e; }
+  .field-label { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; color: #81796e; }
+  .field-label input, .field-label textarea { display: block; width: 100%; margin-top: 0.55rem; border: 1px solid #ded6ca; border-radius: 0.6rem; background: rgba(255, 253, 248, 0.86); padding: 0.82rem 0.9rem; font-family: "Manrope", sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: normal; line-height: 1.5; text-transform: none; color: #314038; outline: none; transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out), background-color 180ms var(--ease-out); }
+  .field-label textarea { resize: vertical; min-height: 7rem; }
+  .field-label input::placeholder, .field-label textarea::placeholder { color: #b1a89a; }
+  .field-label input:focus, .field-label textarea:focus { border-color: #b95f45; background: #fffdf8; box-shadow: 0 0 0 3px rgba(185, 95, 69, 0.12); }
+  .primary-button { border-radius: 0.65rem; background: #b95f45; padding: 0.78rem 1rem; font-size: 0.75rem; font-weight: 800; color: #fffaf2; box-shadow: 0 8px 18px rgba(185, 95, 69, 0.16); }
+  .primary-button:hover { background: #9f4e3a; box-shadow: 0 10px 24px rgba(185, 95, 69, 0.24); }
+  .secondary-button { border: 1px solid #d8d0c3; border-radius: 0.65rem; background: rgba(255, 252, 245, 0.58); padding: 0.78rem 0.9rem; font-size: 0.75rem; font-weight: 800; color: #6e766e; }
+  .secondary-button:hover { background: #fffaf2; color: #35433b; }
+  .text-button { font-size: 0.72rem; font-weight: 800; color: #a6543f; }
+  .text-button:hover { color: #7f3d2f; }
+  .quiet-button:active, .icon-button:active, .secondary-button:active, .primary-button:active, .text-button:active { transform: scale(0.97); }
+  .presentation-shell { border: 1px solid rgba(255,255,255,0.3); border-radius: 1rem; }
+  .presentation-close { position: absolute; right: 1rem; top: 1rem; z-index: 2; display: grid; height: 2.2rem; width: 2.2rem; place-items: center; border-radius: 999px; background: rgba(245,241,233,0.85); font-size: 1.5rem; line-height: 1; color: #35433b; }
+  .presentation-close:hover { background: #fffdf8; }
+  .animate-rise { animation: rise 580ms var(--ease-out) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; scroll-behavior: auto !important; } }
 }
