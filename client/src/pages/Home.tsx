@@ -194,45 +194,14 @@ export default function Home() {
               <div className="paper-card p-6 sm:p-8">
                 {activeChapter === "contexto" ? (
                   <>
-                    <div className="flex items-start justify-between gap-4 border-b border-[#e4ddd2] pb-5">
-                      <div>
-                        <p className="eyebrow">Comece pelo contexto</p>
-                        <h3 className="mt-2 font-display text-3xl text-[#293830]">Onde você está agora?</h3>
-                      </div>
-                      <span className="chapter-stamp">Rascunho</span>
-                    </div>
-                    <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                      <label className="field-label">Seu nome<input value={form.name} onChange={(event) => updateField("name", event.target.value)} placeholder="Como você quer ser chamado?" /></label>
-                      <label className="field-label">Cargo atual<input value={form.role} onChange={(event) => updateField("role", event.target.value)} placeholder="Ex.: Gerente de Operações" /></label>
-                      <label className="field-label">Organização atual<input value={form.company} onChange={(event) => updateField("company", event.target.value)} placeholder="Onde sua atuação acontece hoje?" /></label>
-                      <label className="field-label">Próximo horizonte<input value={form.nextChapter} onChange={(event) => updateField("nextChapter", event.target.value)} placeholder="Que posição ou escopo deseja explorar?" /></label>
-                    </div>
-                    <label className="field-label mt-5 block">O que você deseja compreender nesta leitura?<textarea value={form.objective} onChange={(event) => updateField("objective", event.target.value)} rows={4} placeholder="Escreva com suas palavras. Ainda não é necessário ter uma resposta pronta." /></label>
-                    <label className="field-label mt-5 block">Qual foi um ponto de inflexão importante na sua trajetória?<textarea value={form.turningPoint} onChange={(event) => updateField("turningPoint", event.target.value)} rows={4} placeholder="Uma mudança, decisão, crise ou conquista que alterou seu caminho." /></label>
+                    <div className="flex items-start justify-between gap-4 border-b border-[#e4ddd2] pb-5"><div><p className="eyebrow">Comece pelo contexto</p><h3 className="mt-2 font-display text-3xl text-[#293830]">Onde você está agora?</h3></div><span className="chapter-stamp">Rascunho</span></div>
+                    <div className="mt-7 grid gap-5 sm:grid-cols-2"><label className="field-label">Seu nome<input value={form.name} onChange={(event) => updateField("name", event.target.value)} placeholder="Como você quer ser chamado?" /></label><label className="field-label">Cargo atual<input value={form.role} onChange={(event) => updateField("role", event.target.value)} placeholder="Ex.: Gerente de Operações" /></label><label className="field-label">Organização atual<input value={form.company} onChange={(event) => updateField("company", event.target.value)} placeholder="Onde sua atuação acontece hoje?" /></label><label className="field-label">Próximo horizonte<input value={form.nextChapter} onChange={(event) => updateField("nextChapter", event.target.value)} placeholder="Que posição ou escopo deseja explorar?" /></label></div>
+                    <label className="field-label mt-5 block">O que você deseja compreender nesta leitura?<textarea value={form.objective} onChange={(event) => updateField("objective", event.target.value)} rows={4} placeholder="Escreva com suas palavras. Ainda não é necessário ter uma resposta pronta." /></label><label className="field-label mt-5 block">Qual foi um ponto de inflexão importante na sua trajetória?<textarea value={form.turningPoint} onChange={(event) => updateField("turningPoint", event.target.value)} rows={4} placeholder="Uma mudança, decisão, crise ou conquista que alterou seu caminho." /></label>
                   </>
                 ) : (
-                  <div className="min-h-[360px]">
-                    <p className="eyebrow">Capítulo em construção</p>
-                    <h3 className="mt-3 font-display text-3xl text-[#293830]">{currentChapter.label}</h3>
-                    <p className="mt-5 max-w-2xl text-base leading-7 text-[#6d685f]">
-                      {activeChapter === "trajetoria" && "Agora vamos organizar sua linha do tempo: experiências, decisões e mudanças de escopo que explicam sua evolução."}
-                      {activeChapter === "evidencias" && "Neste capítulo, transformaremos vivências em evidências de impacto, liderança, complexidade e escala."}
-                      {activeChapter === "direcao" && "Aqui vamos comparar seu momento atual com o próximo horizonte executivo e escolher prioridades de desenvolvimento."}
-                      {activeChapter === "sintese" && "A síntese reunirá os fatos, as hipóteses revisadas e a narrativa do seu próximo movimento."}
-                    </p>
-                    <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                      {["Fatos preservados", "Evidências revisáveis", "Próximo movimento"].map((item) => <div key={item} className="rounded-xl border border-[#e4ddd2] bg-[#faf7f0] p-4 text-sm font-semibold text-[#526057]">{item}</div>)}
-                    </div>
-                  </div>
+                  <div className="min-h-[360px]"><p className="eyebrow">Capítulo em construção</p><h3 className="mt-3 font-display text-3xl text-[#293830]">{currentChapter.label}</h3><p className="mt-5 max-w-2xl text-base leading-7 text-[#6d685f]">{activeChapter === "trajetoria" && "Agora vamos organizar sua linha do tempo: experiências, decisões e mudanças de escopo que explicam sua evolução."}{activeChapter === "evidencias" && "Neste capítulo, transformaremos vivências em evidências de impacto, liderança, complexidade e escala."}{activeChapter === "direcao" && "Aqui vamos comparar seu momento atual com o próximo horizonte executivo e escolher prioridades de desenvolvimento."}{activeChapter === "sintese" && "A síntese reunirá os fatos, as hipóteses revisadas e a narrativa do seu próximo movimento."}</p><div className="mt-8 grid gap-3 sm:grid-cols-3">{["Fatos preservados", "Evidências revisáveis", "Próximo movimento"].map((item) => <div key={item} className="rounded-xl border border-[#e4ddd2] bg-[#faf7f0] p-4 text-sm font-semibold text-[#526057]">{item}</div>)}</div></div>
                 )}
-                <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#e4ddd2] pt-5">
-                  <div className="flex items-center gap-2 text-xs text-[#817a70]"><ShieldCheck size={15} className="text-[#718778]" /><span>Você revisará toda interpretação antes da apresentação.</span></div>
-                  <div className="flex items-center gap-2">
-                    {currentIndex > 0 && <button className="secondary-button" type="button" onClick={() => setActiveChapter(chapters[currentIndex - 1].id)}>Voltar</button>}
-                    {activeChapter === "contexto" && <button className="secondary-button" type="button" onClick={saveDraft}><BookOpen size={15} />{savedLocally ? "Rascunho salvo" : "Salvar rascunho"}</button>}
-                    <button className="primary-button" type="button" onClick={goNext}>{currentIndex === chapters.length - 1 ? "Abrir síntese" : "Continuar"} <ArrowRight size={16} /></button>
-                  </div>
-                </div>
+                <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#e4ddd2] pt-5"><div className="flex items-center gap-2 text-xs text-[#817a70]"><ShieldCheck size={15} className="text-[#718778}" /><span>Você revisará toda interpretação antes da apresentação.</span></div><div className="flex items-center gap-2">{currentIndex > 0 && <button className="secondary-button" type="button" onClick={() => setActiveChapter(chapters[currentIndex - 1].id)}>Voltar</button>}{activeChapter === "contexto" && <button className="secondary-button" type="button" onClick={saveDraft}><BookOpen size={15} />{savedLocally ? "Rascunho salvo" : "Salvar rascunho"}</button>}<button className="primary-button" type="button" onClick={goNext}>{currentIndex === chapters.length - 1 ? "Abrir síntese" : "Continuar"} <ArrowRight size={16} /></button></div></div>
               </div>
 
               <aside className="space-y-4">
