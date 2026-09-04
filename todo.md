@@ -54,7 +54,12 @@
 - [x] Confirmar que nenhuma credencial do Gemini, Apps Script ou outro provedor está no frontend; a URL pública do Apps Script é a única referência encontrada.
 - [ ] Documentar o caso fundador e as decisões arquiteturais.
 - [ ] Definir a próxima funcionalidade após a validação do núcleo.
+- [x] Reproduzir o problema do botão Continuar no capítulo Contexto.
+- [x] Confirmar a causa: o estado avançava, mas a tela renderizava sempre o formulário Contexto; não era validação nem erro de JavaScript.
+- [x] Publicar e validar a navegação para o capítulo Trajetória; o progresso passou de 20% para 40% e o conteúdo mudou para Trajetória.
 - [x] Localizar e confirmar o repositório GitHub criado pela exportação do frontend.
-- [x] Diagnosticar o endereço GitHub Pages informado; o build publica, mas o roteador recebia `/ails-planejamento-carreira/` e retornava a página 404 interna.
-- [x] Configurar build e workflow de publicação compatíveis com GitHub Pages.
-- [ ] Ajustar o roteador React para reconhecer o subcaminho `/ails-planejamento-carreira/` e a variante sem barra final.
+- [x] Diagnosticar novamente o endereço GitHub Pages informado; a causa foi a fonte legada `main:/` sem `index.html` na raiz publicada.
+- [x] Confirmar que o build e workflow continuam publicados no GitHub Pages.
+- [x] Ajustar o roteador React para reconhecer o subcaminho `/ails-planejamento-carreira/` e a variante sem barra final.
+- [x] Publicar o artefato compilado com `index.html` e `assets/` na raiz ativa do repositório.
+- [x] Restaurar a publicação do GitHub Pages e validar a URL pública; a tela AILs⁺ abriu corretamente após o novo deploy.
