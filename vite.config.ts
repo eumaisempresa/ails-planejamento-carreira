@@ -206,6 +206,9 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
+  // GitHub Pages publica este projeto em /ails-planejamento-carreira/.
+  // A prévia local e a hospedagem Manus continuam usando a raiz.
+  base: process.env.GITHUB_ACTIONS ? "/ails-planejamento-carreira/" : "/",
   plugins,
   resolve: {
     alias: {
