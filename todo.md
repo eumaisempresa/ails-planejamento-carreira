@@ -50,5 +50,11 @@
 
 - [x] Validar visualmente a navegação inicial, responsividade estrutural, acessibilidade básica e clareza dos resultados.
 - [ ] Testar o fluxo de erro, reprocessamento e versionamento.
+- [x] Auditar o repositório público e o histórico Git em busca de segredos, tokens, chaves e dados sensíveis.
+- [x] Confirmar que nenhuma credencial do Gemini, Apps Script ou outro provedor está no frontend; a URL pública do Apps Script é a única referência encontrada.
 - [ ] Documentar o caso fundador e as decisões arquiteturais.
 - [ ] Definir a próxima funcionalidade após a validação do núcleo.
+- [x] Localizar e confirmar o repositório GitHub criado pela exportação do frontend.
+- [x] Diagnosticar o endereço GitHub Pages informado; o build publica, mas o roteador recebia `/ails-planejamento-carreira/` e retornava a página 404 interna.
+- [x] Configurar build e workflow de publicação compatíveis com GitHub Pages.
+- [ ] Ajustar o roteador React para reconhecer o subcaminho `/ails-planejamento-carreira/` e a variante sem barra final.
